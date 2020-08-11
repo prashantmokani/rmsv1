@@ -1,0 +1,14 @@
+com\masala\hmsv1\dto\TableReservationRequest.class
+com\masala\hmsv1\entities\TableReservation.class
+com\masala\hmsv1\dto\HallReservationRequest.class
+com\masala\hmsv1\entities\HallReservation.class
+com\masala\hmsv1\api\GeneralAPI.class
+com\masala\hmsv1\api\TableReservationAPI.class
+com\masala\hmsv1\service\TableReservationService.class
+com\masala\hmsv1\Hmsv1Application.class
+com\masala\hmsv1\api\HallReservationAPI.class
+com\masala\hmsv1\entities\AbstractEntity.class
+com\masala\hmsv1\dto\BaseResponse.class
+com\masala\hmsv1\service\HallReservationService.class
+com\masala\hmsv1\repositories\TableReservationRepository.class
+com\masala\hmsv1\repositories\HallReservationRepository.class
