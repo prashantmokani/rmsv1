@@ -2,10 +2,7 @@ package com.masala.hmsv1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.servlet.resource.HttpResource;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @Data
