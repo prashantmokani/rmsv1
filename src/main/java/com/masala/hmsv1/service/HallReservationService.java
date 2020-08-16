@@ -6,6 +6,7 @@ import com.masala.hmsv1.repositories.HallReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -14,10 +15,10 @@ public class HallReservationService {
     @Autowired
     private HallReservationRepository hallReservationRepository;
 
-    public HallReservation reserveHall(HallReservationRequest hallReservationRequest){
-        HallReservation hallReservation = new HallReservation();
+    public HallReservation reserveHall(HallReservation hallReservation){
+        //HallReservation hallReservation = new HallReservation();
 
-        hallReservation.setCustomerName(hallReservationRequest.getCustomerName());
+        /*hallReservation.setCustomerName(hallReservationRequest.getCustomerName());
         hallReservation.setPhoneNumber(hallReservationRequest.getPhoneNumber());
         hallReservation.setEmailId(hallReservationRequest.getEmailId());
         hallReservation.setEventName(hallReservationRequest.getEventName());
@@ -25,7 +26,7 @@ public class HallReservationService {
         hallReservation.setFromTime(hallReservationRequest.getFromTime());
         hallReservation.setToTime(hallReservationRequest.getToTime());
         hallReservation.setNoOfAttendees(hallReservationRequest.getNoOfAttendees());
-        hallReservation.setSpecialRequest(hallReservationRequest.getSpecialRequest());
+        hallReservation.setSpecialRequest(hallReservationRequest.getSpecialRequest());*/
 
         hallReservationRepository.save(hallReservation);
 
@@ -34,5 +35,10 @@ public class HallReservationService {
 
     public List<HallReservation> showAllHallReservation(){
         return hallReservationRepository.findAll();
+    }
+
+    public  List<HallReservation> showHallReservationByDate(Date date){
+        List<HallReservation> hallReservationList = hallReservationRepository.getAllHallsByBookingDate(date);
+        return hallReservationList;
     }
 }
