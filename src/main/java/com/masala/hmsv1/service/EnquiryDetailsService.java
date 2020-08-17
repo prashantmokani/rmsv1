@@ -5,6 +5,9 @@ import com.masala.hmsv1.repositories.EnquiryDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+import java.util.List;
+
 @Service
 public class EnquiryDetailsService {
     @Autowired
@@ -14,5 +17,9 @@ public class EnquiryDetailsService {
 
         return enquiryDetailsRepository.save(enquiryDetails);
 
+    }
+
+    public List<EnquiryDetails> getAllEnquiry(){
+        return enquiryDetailsRepository.findAll();
     }
 }

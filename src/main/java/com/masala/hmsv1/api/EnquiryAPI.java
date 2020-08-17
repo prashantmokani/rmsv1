@@ -20,8 +20,16 @@ public class EnquiryAPI {
     public ResponseEntity registerEnquiryDetails(@RequestBody EnquiryDetails enquiryDetails){
         enquiryDetailsService.saveEnquiryDetails(enquiryDetails);
 
-
         return new ResponseEntity(new BaseResponse(HttpStatus.OK.value(),
                 "Successfully sent your data, Reference Id: "+enquiryDetails.getId()),HttpStatus.OK);
+    }
+
+    @GetMapping("/getAllEnquiries")
+    public ResponseEntity getAllEnquiries(){
+
+        return new ResponseEntity(new BaseResponse(HttpStatus.OK.value(),
+                "Successfully Fetched Data of Enquiry.",
+                enquiryDetailsService.getAllEnquiry()),
+                HttpStatus.OK);
     }
 }
